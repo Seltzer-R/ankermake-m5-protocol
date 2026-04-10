@@ -5,6 +5,10 @@ services:
         restart: unless-stopped
         build: .
 
+        # host-mode networking is required for pppp communication with the
+        # printer, since it is an asymmetrical udp protocol.
+        network_mode: host
+        
         # explicit port mapping is used instead of host networking to 
         # allow macOS and Windows Docker Desktop compatibility.
         ports:
