@@ -1,6 +1,6 @@
 services:
     ankerctl:
-        image: ankerctl:latest
+        image: anselor/ankerctl:exile-latest
         container_name: ankerctl
         restart: unless-stopped
         build: .
@@ -17,7 +17,8 @@ services:
             - FLASK_HOST=0.0.0.0
             - FLASK_PORT=${FLASK_PORT:-4470}
         volumes:
-            - ${ANKERCTL_DATA:-ankerctl_vol}:/root/.config/ankerctl
-
+        
+            - ankerctl_vol:/root/.config/ankerctl
+            
 volumes:
     ankerctl_vol:
