@@ -8,7 +8,7 @@ services:
         # explicit port mapping is used instead of host networking to 
         # allow macOS and Windows Docker Desktop compatibility.
         ports:
-            - "${FLASK_PORT:-4470}:${FLASK_PORT:-4470}/tcp"
+            - "4470:4470/tcp"   # Flask Port
             - "32108:32108/udp" # PPPP_LAN_PORT for camera/LAN traffic
             - "32100:32100/udp" # PPPP_WAN_PORT fallback
 
