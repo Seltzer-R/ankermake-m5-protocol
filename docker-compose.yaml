@@ -15,7 +15,7 @@ services:
         # bind to 0.0.0.0 so the container can receive traffic
         environment:
             - FLASK_HOST=0.0.0.0
-            - FLASK_PORT=${FLASK_PORT:-4470}
+            - FLASK_PORT=4470
         volumes:
         
             - ankerctl_vol:/root/.config/ankerctl
